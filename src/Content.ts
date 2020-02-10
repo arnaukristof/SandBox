@@ -1,4 +1,5 @@
-﻿/* eslint-disable @typescript-eslint/no-inferrable-types */
+﻿/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable prefer-const */
 import fs from "fs";
 import http from "http";
@@ -30,33 +31,42 @@ export default class Content {
 
         // Kezd a kódolást innen -->
 
+        //string
         let név: string = "Vicc Elek";
         res.write(`Név: ${név}`);
-
-        // Tetszőleges html teg-ek és attribútumok beépítése:
-        res.write("<span style='color: blue;'><i>Színes és dőlt Hello World!'</i></span>\n");
-
-        // Egyszerű input JSON állományból:
-        const input: InputInterface = JSON.parse(fs.readFileSync("input.json", "utf-8"));
-
-        // String template használata
-        res.write(`1. feladat: ${input.name} kora: ${input.age}\n`);
-
-        // Változó definiálása:
-        let neme = "";
-        neme = input.male ? "férfi" : "nő";
-        res.write(`2. feladat: ${input.name} neme: ${neme}\n`);
-
-        // Input form-al és <input type='number'>-el:
-        // URL paraméter(ek) (itt kor) ellenőrzése,  kiolvasása, alapértelmezett értéke 18:
-        const u = url.parse(req.url as string, true).query;
-        // ha "kor" paraméter nincs megadva vagy "kor" paraméter üres string,
-        // akkor legyen 18 az értéke, egyébként konvertáljuk számra a "kor" paraméter értékét:
-        // let kor: number = u.kor === undefined || u.kor === "" ? 18 : parseInt(u.kor as string);
-        let kor: number = parseInt(u.kor as string);
-        if (isNaN(kor) || kor < 0 || kor > 99) kor = 18; // egy kis ellenőrzés
-        res.write(`3. feladat: Kérem a korod [0-99]: <input type='text' name='kor' value=${kor} style='width:3em;'>\n`);
-        res.write(`4. feladat: Te ${kor} éves vagy!\n`);
+        //bool
+        let igaz: boolean = true;
+        if (igaz) {
+            res.write("Igaz!");
+        }
+        //tömb
+        let család: string[] = ["Tomi", "Krisz", "Kristóf"];
+        res.write(család);
+        //enum
+        enum Bolt {
+            kenyér,
+            krumpli,
+            zab,
+            répa
+        }
+        res.write(Bolt);
+        //union
+        let password: string | number;
+        password = 12345;
+        res.write(password);
+        password = "alma14";
+        res.write(password);
+        //any
+        let bármi: any = "Szia Cica!";
+        res.write(bármi);
+        bármi = 455;
+        res.write(bármi);
+        bármi = true;
+        res.write(bármi);
+        //void
+        function adjPacsit(): void {
+            res.write("Pacsi!!!!!");
+        }
 
         // <---- Fejezd be a kódolást
 
