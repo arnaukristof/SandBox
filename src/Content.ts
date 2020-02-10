@@ -42,32 +42,32 @@ export default class Content {
         }
         //tömb
         let család: string[] = ["Tomi", "Krisz", "Kristóf"];
-        res.write(család);
+        res.write(`${család}`);
         //enum
-        //enum Bolt {
-        //     kenyér,
-        //   krumpli,
-        // zab,
-        //  répa
-        //}
-        //res.write(Bolt);
+        enum Bolt {
+            kenyér,
+            krumpli,
+            zab,
+            répa
+        }
+        res.write(`${Bolt}`);
         //union
-        //let password: string | number;
-        //password = 12345;
-        //res.write(password);
-        //password = "alma14";
-        //res.write(password);
+        let password: string | number;
+        password = 12345;
+        res.write(`${password}`);
+        password = "alma14";
+        res.write(`${password}`);
         //any
-        //let bármi: any = "Szia Cica!";
-        //res.write(bármi);
-        //bármi = 455;
-        //res.write(bármi);
-        //bármi = true;
-        //res.write(bármi);
+        let bármi: any = "Szia Cica!";
+        res.write(bármi);
+        bármi = 455;
+        res.write(`${bármi}`);
+        bármi = true;
+        res.write(`${bármi}`);
         //void
-        //function adjPacsit(): void {
-        //   res.write("Pacsi!!!!!");
-        // }
+        function adjPacsit(): void {
+            res.write("Pacsi!!!!!");
+        }
 
         // <---- Fejezd be a kódolást
 
