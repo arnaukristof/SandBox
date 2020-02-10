@@ -1,4 +1,6 @@
-﻿import fs from "fs";
+﻿/* eslint-disable @typescript-eslint/no-inferrable-types */
+/* eslint-disable prefer-const */
+import fs from "fs";
 import http from "http";
 import url from "url";
 
@@ -28,7 +30,8 @@ export default class Content {
 
         // Kezd a kódolást innen -->
 
-        res.write("Egyszerű Hello World!\n");
+        let név: string = "Vicc Elek";
+        res.write(`Név: ${név}`);
 
         // Tetszőleges html teg-ek és attribútumok beépítése:
         res.write("<span style='color: blue;'><i>Színes és dőlt Hello World!'</i></span>\n");
