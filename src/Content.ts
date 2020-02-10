@@ -34,15 +34,15 @@ export default class Content {
 
         //string
         let név: string = "Vicc Elek";
-        res.write(`Név: ${név}`);
+        res.write(`Név: ${név}\n`);
         //bool
         let igaz: boolean = true;
         if (igaz) {
-            res.write("Igaz!");
+            res.write("Igaz!\n");
         }
         //tömb
         let család: string[] = ["Tomi", "Krisz", "Kristóf"];
-        res.write(`${család}`);
+        res.write(`${család}\n`);
         //enum
         enum Bolt {
             kenyér,
@@ -50,23 +50,23 @@ export default class Content {
             zab,
             répa
         }
-        res.write(`${Bolt}`);
+        res.write(`${Bolt}\n`);
         //union
         let password: string | number;
         password = 12345;
-        res.write(`${password}`);
+        res.write(`${password}\n`);
         password = "alma14";
-        res.write(`${password}`);
+        res.write(`${password}\n`);
         //any
         let bármi: any = "Szia Cica!";
-        res.write(bármi);
+        res.write(`${bármi}\n`);
         bármi = 455;
-        res.write(`${bármi}`);
+        res.write(`${bármi}\n`);
         bármi = true;
-        res.write(`${bármi}`);
+        res.write(`${bármi}\n`);
         //void
         function adjPacsit(): void {
-            res.write("Pacsi!!!!!");
+            res.write("Pacsi!!!!!\n");
         }
 
         // <---- Fejezd be a kódolást
