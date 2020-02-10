@@ -34,7 +34,7 @@ export default class Content {
 
         //string
         let név: string = "Vicc Elek";
-        res.write(`Név: ${név}`);
+        //res.write(`Név: ${név}`);
         //bool
         let igaz: boolean = true;
         if (igaz) {
